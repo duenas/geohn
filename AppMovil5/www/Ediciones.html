@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+    <div data-role="page" id="pagina1">
+        <div data-role="header" data-position="fixed">
+            <h1>REGISTRO DE DATOS</h1>
+        </div>
+
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#" data-icon="search">Consulta</a></li>
+                <li><a href="#pagina2" data-icon="plus">Registro</a></li>
+            </ul>
+        </div>
+
+        <div data-role="content">
+            <div class="titlepage">Buscar usuario</div>
+            <div style="width:100%; display:inline">
+                <div style="float: left; width:60%; padding-right:3px;margin-top:3px;">
+                    <input type="text" id="txtNombre" data-clear-btn="true" />
+                </div>
+                <div style="float: left; width:35%;">
+                    <button id="btnBuscar">Buscar</button>
+                </div>
+            </div>
+            <div id="divResultado"></div>
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <h3>Tutorial Apache Cordova</h3>
+        </div>
+    </div>
+</body>
+</html>
