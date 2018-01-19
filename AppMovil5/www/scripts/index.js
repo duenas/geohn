@@ -80,7 +80,7 @@
             success: function (result) {
                 $.each(result, function (i, field) {
                     
-                    cadena = cadena + "<tr>" + "<td>" + " Edicion #:" + field.edicion + "<br>" + " <img style=display: block;  width=350 height=300 src=" + field.urlportada    +">"  + "<br>"  + field.titulo + "<br>"+ "."+ "</td>" + "</tr>" ;
+                    cadena = cadena + "<tr>" + "<td>" + " Edicion #:" + field.edicion + "<br>" + " <img style=display: block;  width=300 height=250 src=" + field.urlportada    +">"  + "<br>"  + field.titulo + "<br>"+ "."+ "</td>" + "</tr>" ;
                 });
                 cadena = cadena + "</table>";
                 $("#divLista").append(cadena);
