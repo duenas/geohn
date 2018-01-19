@@ -71,7 +71,7 @@
         //agregando evento Ajax
         $.ajax({
             type: "GET",
-            url: "http://www.servicioshn.somee.com/PostDataEdicion.aspx",
+            url: "http://192.168.0.11:9098/PostDataEdicion.aspx",
             crossDomain: true,
             cache: false,
             contentType: "application/json; charset=utf-8",
@@ -80,7 +80,7 @@
             success: function (result) {
                 $.each(result, function (i, field) {
                     
-                    cadena = cadena + "<tr>" + "<td>" + " Edicion #:" + field.edicion + "<br>" + " <img src=http://www.servicioshn.somee.com/AmericaEconomiaLogo.png>" + "<br>"  + field.titulo + "<br>"+ "."+ "</td>" + "</tr>" ;
+                    cadena = cadena + "<tr>" + "<td>" + " Edicion #:" + field.edicion + "<br>" + " <img style=display: block;  width=350 height=300 src=" + field.urlportada    +">"  + "<br>"  + field.titulo + "<br>"+ "."+ "</td>" + "</tr>" ;
                 });
                 cadena = cadena + "</table>";
                 $("#divLista").append(cadena);
