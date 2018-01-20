@@ -103,3 +103,10 @@ h1 {
     position: relative;
     top: -15px;
 }
+.center-wrapper {
+    text-align: center;
+}
+
+    .center-wrapper * {
+        margin: 0 auto;
+    }

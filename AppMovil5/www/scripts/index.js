@@ -11,18 +11,22 @@
         // Controlar la pausa de Cordova y reanudar eventos
         document.addEventListener('pause', onPause.bind(this), false);
         document.addEventListener('resume', onResume.bind(this), false);
-        CargarLista()
+     
         //TODO PERSONALIZADO
         //$('#btnMostrarMapa').click(getDatos);
-        //document.getElementById("btnCargar").addEventListener('click', CargarLista, false);
+        document.getElementById("entrar").addEventListener('click', BuscarUsuario, false);
+        document.getElementById("register").addEventListener('click', registrar, false);
+      
     };
 
     function onPause() {
         // TODO: esta aplicación se ha suspendido. Guarde el estado de la aplicación aquí.
+        alert("on  pause");
     };
 
     function onResume() {
         // TODO: esta aplicación se ha reactivado. Restaure el estado de la aplicación aquí.
+        alert("on  resume");
     };
 
     function getDatos() {
@@ -65,31 +69,49 @@
     }
 
 
-    function CargarLista() {
-        var cadena = "<table border=0 cellpadding=3 cellspacing=0 class=fa-align - center>";
-        //var cadena = "<table border=0 cellpadding=2 cellspacing=0><tr><th>Nombre</th><th>Direccion</th><th>Telefono</th></tr>";
-        //agregando evento Ajax
-        $.ajax({
-            type: "GET",
-            url: "http://192.168.0.11:9098/PostDataEdicion.aspx",
-            crossDomain: true,
-            cache: false,
-            contentType: "application/json; charset=utf-8",
-            async: false,
-            dataType: "json",
-            success: function (result) {
-                $.each(result, function (i, field) {
-                    
-                    cadena = cadena + "<tr>" + "<td>" + " Edicion #:" + field.edicion + "<br>" + " <img style=display: block;  width=300 height=250 src=" + field.urlportada    +">"  + "<br>"  + field.titulo + "<br>"+ "."+ "</td>" + "</tr>" ;
-                });
-                cadena = cadena + "</table>";
-                $("#divLista").append(cadena);
-            },
-            error: function (result) {
-                alert("Ocurrió un problema. Por favor Comuníquese con el administrador del sistema. Gracias.");
-            }
-        });
+   
+
+
+    function BuscarUsuario() {
+        var usuario = document.getElementById("email").value;
+        var pass = document.getElementById("pass").value;
+        var url1= "http://192.168.0.11:9098/getdata.aspx?usuario=" + usuario + "&pass=" + pass
+        if (usuario == "") {
+            docume.getElementById("divResultado").innerHTML = "Ingrese usuario!";
+        }
+        else {
+            $.ajax({
+                type: "GET",
+                url: url1,
+                crossDomain: false,
+                cache: false,
+                success: function (result) {
+                    var validacion = result[0].fullname;
+                    if (validacion == 'True')
+                    {
+                        alert("Bienvenido");
+                        window.location.href = 'menu.html'; 
+                      
+                    }
+
+                    //
+                    //alert("Bienvenido");
+
+                },
+                error: function (result) {
+                    alert("Error");
+                }
+
+            });
+        }
     }
 
+    function registrar() {
+        window.location.href = 'register.html';
+    }
+
+    function onBackKeyDown() {
+        Alert("Esta Seguro que desea Salir?");
+    }
 
 })();
