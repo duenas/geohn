@@ -17,6 +17,8 @@
      
 
         CargarLista()
+        document.getElementById("cerrarsession").addEventListener('click', salir, false)
+        document.getElementById("micuenta").addEventListener('click', micuenta, false)
     };
 
     function onPause() {
@@ -59,9 +61,24 @@
         });
     }
 
+    function salir() {
+               var insert = 0;
+        if (confirm("Estas seguro?")) {
+            //agregando evento Ajax
+            window.location.href = 'index.html'; 
+        }
+    }
+
+    function micuenta() {
+       
+            window.location.href = 'cuenta.html';
+    
+    }
 
 
 
+
+   
 
   
 
