@@ -71,7 +71,7 @@
 
     function micuenta() {
        
-            window.location.href = 'cuenta.html';
+        window.location.href = 'profile_2.html';
     
     }
 

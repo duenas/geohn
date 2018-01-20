@@ -75,6 +75,15 @@
     function BuscarUsuario() {
         var usuario = document.getElementById("email").value;
         var pass = document.getElementById("pass").value;
+        if (usuario == "") {
+            alert("Ingrese un usuario!");
+            return false;
+        }
+        if (pass == "") {
+            alert("Ingrese un Password!");
+            return false;
+        }
+
         var url1= "http://192.168.0.11:9098/getdata.aspx?usuario=" + usuario + "&pass=" + pass
         if (usuario == "") {
             docume.getElementById("divResultado").innerHTML = "Ingrese usuario!";
@@ -87,11 +96,15 @@
                 cache: false,
                 success: function (result) {
                     var validacion = result[0].fullname;
-                    if (validacion == 'True')
-                    {
+                    if (validacion == 'True') {
                         alert("Bienvenido");
-                        window.location.href = 'menu.html'; 
-                      
+                        window.location.href = 'menu.html';
+
+                    }
+                    else
+                    {
+                        alert("Usuario o Clave no Validos");
+                        return;
                     }
 
                     //
