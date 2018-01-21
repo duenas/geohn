@@ -19,6 +19,8 @@
         CargarLista()
         document.getElementById("cerrarsession").addEventListener('click', salir, false)
         document.getElementById("micuenta").addEventListener('click', micuenta, false)
+        //document.getElementById("edicionselect").addEventListener('click', edicionselect, false)
+        $('#edicion').click(edicionselect);
     };
 
     function onPause() {
@@ -50,7 +52,7 @@
             success: function (result) {
                 $.each(result, function (i, field) {
 
-                    cadena = cadena + "<tr>" + "<td class=center-wrapper >" + " Edicion #:" + field.edicion + "<br>" + " <img align=middle border=5 style=display: block;  width=300 height=250 src=" + field.urlportada + ">" + "<br>" + field.titulo + "<br>" + "." + "</td>" + "</tr>";
+                    cadena = cadena + "<table> <tr id=edicion>" + "<td class=center-wrapper >" + " Edicion #:" + field.edicion + "<br>" + " <img align=middle border=5 style=display: block;  width=300 height=250 src=" + field.urlportada + ">" + "<br>" + field.titulo + "<br>" + "" + "</td>" + "</tr>";
                 });
                 cadena = cadena + "</table>";
                 $("#divLista").append(cadena);
@@ -73,6 +75,10 @@
        
         window.location.href = 'profile_2.html';
     
+    }
+    function edicionselect() {
+      
+        window.location.href = 'descarga.html'; 
     }
 
 
