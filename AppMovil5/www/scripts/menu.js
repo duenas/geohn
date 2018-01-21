@@ -19,8 +19,8 @@
         CargarLista()
         document.getElementById("cerrarsession").addEventListener('click', salir, false)
         document.getElementById("micuenta").addEventListener('click', micuenta, false)
-        //document.getElementById("edicionselect").addEventListener('click', edicionselect, false)
-        $('#edicion').click(edicionselect);
+        //document.getElementById("seleccionar").addEventListener('click', edicionselect, false)
+        //$('#seleccionar').click(edicionselect);
     };
 
     function onPause() {
@@ -34,7 +34,7 @@
     };
 
 
-
+    var edicionseleccionada = "";
 
 
     function CargarLista() {
@@ -52,9 +52,11 @@
             success: function (result) {
                 $.each(result, function (i, field) {
 
-                    cadena = cadena + "<table> <tr id=edicion>" + "<td class=center-wrapper >" + " Edicion #:" + field.edicion + "<br>" + " <img align=middle border=5 style=display: block;  width=300 height=250 src=" + field.urlportada + ">" + "<br>" + field.titulo + "<br>" + "" + "</td>" + "</tr>";
+                    cadena = cadena + " <tr >" + "<td class=center-wrapper >" + " Edicion #:" + field.edicion + "<br>" + " <img  align=middle border=5 style=display: block;  width=300 height=250 src=" + field.urlportada + ">" + "<br>" + field.titulo + "<br>" + "" + "<a id=seleccionar  href='descarga.html?edicion=" + field.edicion + "' class=ui-btn ui-btn-inline ui-icon-delete ui-btn-icon-right style=background: green; color: red; >Descargar</a>" + " </td>" + " </tr>";
+                  
                 });
                 cadena = cadena + "</table>";
+              
                 $("#divLista").append(cadena);
             },
             error: function (result) {
