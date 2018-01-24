@@ -43,7 +43,7 @@
         //agregando evento Ajax
         $.ajax({
             type: "GET",
-            url: "http://localhost:9098/PostDataEdicion.aspx",
+            url: "http://192.168.233.127:9098/PostDataEdicion.aspx",
             crossDomain: true,
             cache: false,
             contentType: "application/json; charset=utf-8",
