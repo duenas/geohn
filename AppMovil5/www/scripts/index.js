@@ -84,7 +84,7 @@
             return false;
         }
 
-        var url1= "http://192.168.0.11:9098/getdata.aspx?usuario=" + usuario + "&pass=" + pass
+        var url1 = "http://192.168.233.127:9098/getdata.aspx?usuario=" + usuario + "&pass=" + pass
         if (usuario == "") {
             docume.getElementById("divResultado").innerHTML = "Ingrese usuario!";
         }
