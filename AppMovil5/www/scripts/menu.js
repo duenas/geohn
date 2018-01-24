@@ -43,7 +43,7 @@
         //agregando evento Ajax
         $.ajax({
             type: "GET",
-            url: "http://192.168.233.127:9098/PostDataEdicion.aspx",
+            url: "http://hnmclgl0584.ad.porsalud.net:9098/PostDataEdicion.aspx",
             crossDomain: true,
             cache: false,
             contentType: "application/json; charset=utf-8",
@@ -52,7 +52,7 @@
             success: function (result) {
                 $.each(result, function (i, field) {
 
-                    cadena = cadena + " <tr >" + "<td class=center-wrapper >" + " Edicion #:" + field.edicion + "<br>" + " <img  align=middle border=5 style=display: block;  width=300 height=250 src=" + field.urlportada + ">" + "<br>" + field.titulo + "<br>" + "" + "<a id=seleccionar  href='http://192.168.233.127:9999/descarga' class=ui-btn ui-btn-inline ui-icon-delete ui-btn-icon-right style=background: green; color: red; >Descargar</a>" + " </td>" + " </tr>";
+                    cadena = cadena + " <tr >" + "<td class=center-wrapper >" + " Edicion #:" + field.edicion + "<br>" + " <img  align=middle border=5 style=display: block;  width=300 height=250 src=" + field.urlportada + ">" + "<br>" + field.titulo + "<br>" + "" + "<a id=seleccionar  href='http://hnmclgl0584.ad.porsalud.net:9999/descarga' class=ui-btn ui-btn-inline ui-icon-delete ui-btn-icon-right style=background: green; color: red; >Descargar</a>" + " </td>" + " </tr>";
                   
                 });
                 cadena = cadena + "</table>";
