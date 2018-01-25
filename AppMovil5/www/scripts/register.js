@@ -53,7 +53,7 @@
             //agregando evento Ajax
             $.ajax({
                 type: "POST",
-                url: "http://hnmclgl0584.ad.porsalud.net:9098/postdata.aspx/RegistraUsuario",
+                url: "http://192.168.0.11:9098/postdata.aspx/RegistraUsuario",
                 data: "{'pUsername':'" + pUsername + "','pPassword':'" + pPass + "','pEmail':'" + pEmail + "'}",
                 dataType: "json",
                 contentType: "application/json; charset=utf-8",
