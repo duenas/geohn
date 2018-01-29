@@ -37,7 +37,7 @@
         var sinopsis = "";
         $.ajax({
             type: "POST",
-            url: "http://192.168.0.11:24480/postinfoediciones.aspx/urlinfo",
+            url: "http://192.168.0.11:9098/postinfoediciones.aspx/urlinfo",
             data: "{'edicion':'" + iddecion + "'}",
             dataType: "json",
             contentType: "application/json; charset=utf-8",
@@ -60,7 +60,7 @@
         var cadena = "<table border=0 cellpadding=3 cellspacing=0 class=fa-align - center>";
         $.ajax({
             type: "POST",
-            url: "http://localhost:24480/postinfoediciones.aspx/sinopsis",
+            url: "http://localhost:9098/postinfoediciones.aspx/sinopsis",
             data: "{'edicion':'" + iddecion + "'}",
             dataType: "json",
             contentType: "application/json; charset=utf-8",
