@@ -19,8 +19,14 @@
         CargarLista()
         document.getElementById("cerrarsession").addEventListener('click', salir, false)
         document.getElementById("micuenta").addEventListener('click', micuenta, false)
-        //document.getElementById("seleccionar").addEventListener('click', edicionselect, false)
+        //document.getElementById("enero").addEventListener('click', edicionvista, false)
+        //document.getElementById("divLista").addEventListener('click', edicionselect, false)
         //$('#seleccionar').click(edicionselect);
+        $('#divLista').on('click', 'td', function (evt) {
+            var celda = $(this).text();
+            sessionStorage.edicion = celda; 
+            window.location.href = 'descarga.html' ;
+        });
     };
 
     function onPause() {
@@ -52,7 +58,7 @@
             success: function (result) {
                 $.each(result, function (i, field) {
 
-                    cadena = cadena + " <tr >" + "<td class=center-wrapper >" + " Edicion #:" + field.edicion + "<br>" + " <img  align=middle border=5 style=display: block;  width=300 height=250 src=" + field.urlportada + ">" + "<br>" + field.titulo + "<br>" + "" + "<a id=seleccionar  href='http://192.168.0.11:9999/Descarga/Index?edicion="+ field.edicion +" '  class=ui-btn ui-btn-inline ui-icon-delete ui-btn-icon-right style=background: green; color: red; >Descargar</a>" + " </td>" + " </tr>";
+                    cadena = cadena + " <tr >" + "<td data-edicion=" + field.edicion + "class=center-wrapper ><h3 class= 'center-wrapper'>"  + field.edicion + "</h3>" + " <img  align=middle border=5 style=display: block;  width=300 height=250 src=" + field.urlportada + ">"  + "" + " </td>" + " </tr>";
                   
                 });
                 cadena = cadena + "</table>";
@@ -73,18 +79,36 @@
         }
     }
 
-    function micuenta() {
+    function edicionvista() {
        
+       // window.location.href = 'file:///C:/inetpub/wwwroot/descarga/ejemplo.pdf';
+     
+    }
+
+
+
+    function micuenta() {
+
         window.location.href = 'Cuenta.html';
-    
+
     }
     function edicionselect() {
       
-        window.location.href = 'descarga.html'; 
+    //   $('#divLista').on('click', 'td', function (evt) {
+    //    var target, edicion, valorSeleccionado;
+    //    target = $(event.target);
+    //    edicion = target.parent().data('#:');
+    //    valorSeleccionado = target.text();
+    //    alert("Valor Seleccionado: " + valorSeleccionado + "\n edicion: " + target.parent().data('#:'));
+    //});
+        //$('#divLista').on('click', 'td', function (evt) {
+        //    var celda = $(this).text();
+        //    //alert(celda);
+        //    window.location.href = 'descarga.html';
+        //});
     }
 
-
-
+ 
 
    
 
