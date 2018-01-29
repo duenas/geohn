@@ -31,7 +31,7 @@
 
     function Cargarurl() {
         var iddecion = sessionStorage.edicion;
-
+      
         //alert(iddecion);
         var insert = "";
         var sinopsis = "";
@@ -60,7 +60,7 @@
         var cadena = "<table border=0 cellpadding=3 cellspacing=0 class=fa-align - center>";
         $.ajax({
             type: "POST",
-            url: "http://localhost:9098/postinfoediciones.aspx/sinopsis",
+            url: "http://192.168.0.11:9098/postinfoediciones.aspx/sinopsis",
             data: "{'edicion':'" + iddecion + "'}",
             dataType: "json",
             contentType: "application/json; charset=utf-8",
@@ -73,7 +73,7 @@
                 $("#divLista").append(cadena);
             },
             error: function (result) {
-                alert("Ocurrió un problema. Por favor Comuníquese con el administrador del sistema. Gracias.");
+                alert("Ocurrió un problema. Por favor Comuníquese con el administrador del sistema. Gracias. error 2");
             }
         });
 
