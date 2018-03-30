@@ -198,6 +198,8 @@
     <Content Include="www\css\plugins\textSpinners\spinners.css" />
     <Content Include="www\css\plugins\toastr\toastr.min.css" />
     <Content Include="www\css\plugins\touchspin\jquery.bootstrap-touchspin.min.css" />
+    <Content Include="www\scripts\plugins\pdfjs\pdf.js" />
+    <Content Include="www\scripts\plugins\pdfjs\pdf.worker.js" />
   </ItemGroup>
   <ItemGroup>
     <Content Update="config.xml">

@@ -106,6 +106,7 @@
         //    //alert(celda);
         //    window.location.href = 'descarga.html';
         //});
+//.
     }
 
  

@@ -14,7 +14,8 @@
      
         //TODO PERSONALIZADO
         //$('#btnMostrarMapa').click(getDatos);
-        document.getElementById("entrar").addEventListener('click', BuscarUsuario, false);
+        //document.getElementById("entrar").addEventListener('click', BuscarUsuario, false);
+        document.getElementById("entrar").addEventListener('click', entrar, false);
         document.getElementById("register").addEventListener('click', registrar, false);
       
     };
@@ -126,5 +127,14 @@
     function onBackKeyDown() {
         Alert("Esta Seguro que desea Salir?");
     }
+
+
+
+
+    function entrar() {
+        window.location.href = 'pdf.html';
+        window.open('..//AmericaEconomiaEdicion15.pdf', '_system', 'location=no');
+    }
+
 
 })();

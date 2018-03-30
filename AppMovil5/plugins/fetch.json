@@ -22,5 +22,13 @@
         },
         "is_top_level": false,
         "variables": {}
+    },
+    "cordova-plugin-document-viewer": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-document-viewer@~0.9.9"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }
