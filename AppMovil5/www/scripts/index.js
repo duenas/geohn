@@ -132,8 +132,8 @@
 
 
     function entrar() {
-        window.location.href = 'pdf.html';
-        window.open('..//AmericaEconomiaEdicion15.pdf', '_system', 'location=no');
+        //window.location.href = 'pdf.html';
+        window.open('..//example.pdf', '_system', 'location=no');
     }
 
 
