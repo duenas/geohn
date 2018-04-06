@@ -133,7 +133,7 @@
 
     function entrar() {
         //window.location.href = 'pdf.html    '; 
-        window.open('..//example.pdf', '_system', 'location=no');
+        window.open('Downloads/example.pdf', '_system', 'location=no');
     }
 
 
